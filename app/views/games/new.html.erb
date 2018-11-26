@@ -1,0 +1,44 @@
+
+<h1>New game</h1>
+
+<ul class="letters">
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<p class="form-prefix">What is the longest word you can find?</p>
+
+<form action="/score" method="POST" class="form-inline">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <div class="input-group input-group">
+    <input type="text" name="word" class="form-control">
+    <span class="input-group-btn">
+      <input type="submit" value="Play" class="btn btn-primary">
+    </span>
+  </div>
+</form>
+
+
+
+<!-- <h1>Stupid Coaching</h1>
+<div class="container">
+  <div class="question">
+    <h2><%= @question%></h2>
+    <p> -You</p>
+  </div>
+
+  <div class="coach_answer">
+    <h3> <%= @coach_answer%></h3>
+    <p>-Your coach</p>
+  </div>
+</div>
+ -->
+
+<!-- <div class="container">
+  <form action="/answer">
+    <input type="text" name="question">
+    <input type="submit" value="Ask!">
+  </form>
+</div> -->
